@@ -1,0 +1,16 @@
+[Unit]
+Description=Monitora Criar VMs
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=no-failure
+RestartSec=10s
+KillMode=process
+PIDFile=/var/run/monitora-vms.pid
+ExecStart=/opt/appsrv/scripts/monitora-vms.sh start
+
+[Install]
+WantedBy=multi-user.target
